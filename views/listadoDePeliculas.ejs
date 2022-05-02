@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <title>Document</title>
+</head>
+<body>        
+    <div class="containerTitle">
+        <h1>Listado de Peliculas</h1>
+        <a class="add" href="/movies/add">Agregar Pelicula</a>
+        <a class="add" href="/users/add">Registrar Usuario</a>
+    </div>
+    <section class="homeSection">
+        <% for(let i = 0; i < movies.length; i++){ %>
+        <div class="cards">
+            <img src="https://images.vexels.com/media/users/3/153232/isolated/preview/c3bcb676107e330558ccc68f8e1cf7d5-icono-plano-del-reproductor-de-peliculas.png">
+            <br><br><a href = "/movies/<%=movies[i].id%>"><%=movies[i].title%><br><br></a>
+        </div>
+        <% } %>
+    </section>
+</body>
+</html>

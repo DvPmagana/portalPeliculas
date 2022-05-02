@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const userController = require("../controller/userController");
+const {body, validationResult} = require('express-validator')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', userController.list);
+router.get("/add",userController.add);
+router.post("/add",userController.create);
+router.get("/login",userController.login);
+router.post("/login",userController.loginProcess);
 
 module.exports = router;
+

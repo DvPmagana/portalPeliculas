@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Creacion de usuario</h1>
+    <a class="add" href="/movies">Ir a Listado</a><br>
+    <section class="homeAdd">
+        <form method="POST" action="/users/add">
+            <br><label for="">Usuario</label><br>
+            <input type="text" name="user">
+            <br>
+            <label for="">Correo</label><br>
+            <input type="text" name="email">
+            <br>
+            <label for="">Contraseña</label><br>
+            <input type="password" name="password">
+            <br>
+            <label for="">Rol</label><br>
+             <select name="rol">
+                <option value="1">Administrador</option>
+                <option value="0">Usuario General</option>
+             </select>
+            <br>
+            <input type="submit" value="Registrar">
+        </form>
+    </section>
+</body>
+</html

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Detalle de Pelicula</h1>
+    <a class="add" href="/movies">Ir a Listado</a><br>
+    <section class="homeSection">
+        <div class="cards">
+            <h2><%=movies.title%></h2>
+            <% if (movies.genres) { %>
+            <% } %>    
+         </div>
+        <div class="cards">
+            <% if (movies.genres) { %>
+                <h3>Generos:</h3>
+                <span><%=movies.genres.name%></span>
+            <% } %>
+                <h3>Actores:</h3>
+            <% for (let i = 0; i < movies.actors.length; i++) { %>
+                <span><%= movies.actors[i].first_name%></span>
+                <span><%= movies.actors[i].last_name%></span><br>
+            <% } %>
+            <h3>Rating:</h3>
+            <span><%=movies.rating%></span>
+        </div>
+        <form action="/movies/delete/<%=movies.id%>" method="POST">
+            <button class="botonDelete" type="submit">Delete</button>
+        </form>
+    </section>
+</body>
+</html>
